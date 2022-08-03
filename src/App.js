@@ -1,17 +1,22 @@
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
+import Home from './Pages/Home/Banner';
+import Footer from './Pages/Shared/Footer';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Routes>
-
-      </Routes>
-      <Footer/>
-    </div>
+    <AnimatePresence>
+      <div className='w-screen h-screen flex flex-col bg-primary'>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+        </Routes>
+        <Footer />
+      </div>
+    </AnimatePresence>
   );
 }
 
