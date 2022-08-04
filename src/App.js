@@ -4,6 +4,8 @@ import Header from './Pages/Shared/Header';
 import Home from './Pages/Home/Banner';
 import Footer from './Pages/Shared/Footer';
 import { AnimatePresence } from 'framer-motion';
+import Register from './Pages/Login/Register';
+import Login from './Pages/Login/Login';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
         <Footer />
       </div>
