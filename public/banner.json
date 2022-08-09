@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Icecream",
+        "description": "Chocolate & Vanilla",
+        "price": "5.75",
+        "img": "https://i.ibb.co/12xWYkF/i1.png",
+        "imglink": "https://ibb.co/3hHZ5ng"
+    },
+    {
+        "id": 2,
+        "name": "Strawberries",
+        "description": "Fresh Strawberries",
+        "price": "8.25",
+        "img": "https://i.ibb.co/xSmNdQD/f1.png",
+        "imglink": "https://ibb.co/rGbVNJm"
+    },
+    {
+        "id": 3,
+        "name": "Chicken Kebab",
+        "description": "Mixed Kebab Plate",
+        "price": "14.50",
+        "img": "https://i.ibb.co/pb3G8K0/c3.png",
+        "imglink": "https://ibb.co/RYCZm6v"
+    },
+    {
+        "id": 4,
+        "name": "Fish Kebab",
+        "description": "Mixed Fish Kebab",
+        "price": "16.60",
+        "img": "https://i.ibb.co/qgPrFcd/fi1.png",
+        "imglink": "https://ibb.co/2MfkYCy"
+    }
+]
