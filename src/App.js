@@ -7,6 +7,7 @@ import Register from './Pages/Login/Register';
 import Login from './Pages/Login/Login';
 import Service from './Pages/Service/Service';
 import RequireAuth from './Pages/Login/RequireAuth';
+import AddItem from './Pages/Protect/AddItem';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Service />
               </RequireAuth>
             } />
+            <Route path='/additem' element={<AddItem />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
           </Routes>
