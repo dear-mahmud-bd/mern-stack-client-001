@@ -28,13 +28,15 @@ const Header = () => {
     }
     return (
         <header className=' z-50 w-screen p-4 px-7 md:p-5 md:px-16 bg-primary'>
+            {/* fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary */}
+
             {/* Desktop & Tablet */}
             <div className='hidden md:flex w-full h-full items-center justify-between'>
                 <Link to='/' className='flex items-center gap-2'>
                     <img src={Logo} className='w-10 object-cover' alt="Logo" />
                     <p className=' text-heaingColor text-xl font-bold'>Food Corner</p>
                 </Link>
-                <div className='flex items-center gap-7'>
+                <div className='flex items-center gap-8'>
                     <motion.ul initial={{ opacity: 0, x: 200 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }} className='flex items-center gap-7 ml-auto'>
                         <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>Home</li>
                         <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>All Item</li>
@@ -53,7 +55,9 @@ const Header = () => {
                             {
                                 isMenu && (
                                     <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.5 }} className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-11 right-0'>
+                                        <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p>
                                         <Link to='/additem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdAdd /> Add Item</p></Link>
+                                        <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdDeleteForever /> Delete Item</p>
                                         {
                                             user ?
                                                 <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={handleSignOut}><MdLogout /> LogOut</p>
@@ -95,8 +99,8 @@ const Header = () => {
                             isMenu && (
                                 <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.5 }} className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-11 right-0'>
                                     <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdHome /> Home</p>
-                                    <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p>
                                     <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdList /> All Item</p>
+                                    <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p>
                                     <Link to='/additem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdAdd /> Add Item</p></Link>
                                     <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdDeleteForever /> Delete Item</p>
                                     {
