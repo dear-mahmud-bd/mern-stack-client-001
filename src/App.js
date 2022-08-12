@@ -8,6 +8,8 @@ import Login from './Pages/Login/Login';
 import Service from './Pages/Service/Service';
 import RequireAuth from './Pages/Login/RequireAuth';
 import AddItem from './Pages/Protect/AddItem';
+import AllProduct from './Pages/Shared/AllProduct';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
@@ -23,11 +25,13 @@ function App() {
                 <Service />
               </RequireAuth>
             } />
+            <Route path='/allitem' element={<AllProduct />} />
             <Route path='/additem' element={<AddItem />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
     </AnimatePresence>
   );

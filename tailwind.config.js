@@ -53,6 +53,8 @@ module.exports = {
         primary: "#f5f3f3",
         colorOverlay: "rgba(256,256,256,0.4)",
         lighttextGray: "#9ca0ab",
+        footerBg: "#caced1",
+        footerBgBottom: "rgba(0, 0, 0, 0.2)",
       }
     },
   },

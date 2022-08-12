@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Product from '../Shared/Product';
+import Product from './Product';
 
-
-const Products = () => {
+const AllProduct = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('products.json')
@@ -20,17 +18,12 @@ const Products = () => {
             <div className="w-full my-6 flex justify-center">
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     {
-                        products.slice(0, 6).map(product => <Product key={product.id} product={product} />)
+                        products.map(product => <Product key={product.id} product={product} />)
                     }
                 </div>
             </div>
-            <Link to='allitem' className='mb-16'>
-                <span className="p-3 font-bold text-gray-500 hover:text-white border-2 border-gray-200 rounded-md text-base hover:bg-orange-500 hover:border-orange-400 cursor-pointer">
-                    SEE MORE
-                </span>
-            </Link>
         </>
     );
 };
 
-export default Products;
+export default AllProduct;

@@ -20,7 +20,7 @@ const Product = ({product}) => {
                 <p className="text-textColor font-semibold text-lg md:text-xl">{product.name}</p>
                 <p className='text-[12px] lg:text-sm text-lighttextGray font-semibold '>{product.description}</p>
                 <p className="mt-1 text-sm text-gray-500 ">Available: {product.quantity} pitches</p>
-                <p className="mt-1 text-base font-medium text-gray-500 flex items-center gap-2 ml-auto"><span className='text-orange-600 text-2xl'><MdDeliveryDining /></span><span>{product.supplier}</span></p>
+                <p className="mt-1 font-medium text-gray-500 flex items-center gap-2 ml-auto"><span className='text-orange-600 text-2xl'><MdDeliveryDining /></span><span className=' text-xs'>{product.supplier}</span></p>
                 <div className="flex items-center gap-8">
                     <p className="text-lg text-heaingColor font-bold"><span className=' text-lg text-red-600'>$</span> {product.price}</p>
                 </div>

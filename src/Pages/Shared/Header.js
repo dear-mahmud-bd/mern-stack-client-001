@@ -38,8 +38,9 @@ const Header = () => {
                 </Link>
                 <div className='flex items-center gap-8'>
                     <motion.ul initial={{ opacity: 0, x: 200 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }} className='flex items-center gap-7 ml-auto'>
-                        <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>Home</li>
-                        <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>All Item</li>
+                        <Link to='/'><li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>Home</li></Link>
+                        <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>Blogs</li>
+                        <Link to='allitem'><li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>All Item</li></Link>
                         <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/service" onClick={navigateService}>Service</Link></li>
                     </motion.ul>
                     <div className='relative flex items-center justify-center'>
@@ -98,7 +99,7 @@ const Header = () => {
                         {
                             isMenu && (
                                 <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.5 }} className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-11 right-0'>
-                                    <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdHome /> Home</p>
+                                    <Link to='/'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdHome /> Home</p></Link>
                                     <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdList /> All Item</p>
                                     <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p>
                                     <Link to='/additem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdAdd /> Add Item</p></Link>
