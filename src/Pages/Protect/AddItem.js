@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaSortAmountUpAlt } from 'react-icons/fa';
 import { IoIosPricetags } from 'react-icons/io';
-import { MdDescription, MdFastfood, MdOutlineAddPhotoAlternate } from 'react-icons/md';
+import { MdDeliveryDining, MdDescription, MdFastfood, MdOutlineAddPhotoAlternate } from 'react-icons/md';
 
 const AddItem = () => {
     return (
@@ -60,6 +60,17 @@ const AddItem = () => {
                         // value={title}
                         // onChange={(e) => setTitle(e.target.value)}
                         placeholder="Product $ Price..."
+                        className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+                    />
+                </div>
+                <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+                    <MdDeliveryDining className="text-xl text-gray-700" />
+                    <input
+                        type="text"
+                        required
+                        // value={title}
+                        // onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Delivery man..."
                         className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
                     />
                 </div>

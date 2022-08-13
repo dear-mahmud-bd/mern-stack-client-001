@@ -10,13 +10,14 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import AddItem from './Pages/Protect/AddItem';
 import AllProduct from './Pages/Shared/AllProduct';
 import Footer from './Pages/Shared/Footer';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <AnimatePresence exitBeforeEnter>
       <div className='w-screen h-screen flex flex-col bg-primary'>
         <Header />
-        <main className='mt-0 md:mt-1 px-4 md:px-16 py-4 w-full'>
+        <main className='mt-0 md:mt-1 px-4 md:px-16 py-4 w-full bg-primary'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
@@ -33,6 +34,7 @@ function App() {
         </main>
         <Footer/>
       </div>
+      <ToastContainer></ToastContainer>
     </AnimatePresence>
   );
 }

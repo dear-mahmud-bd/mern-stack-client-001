@@ -25,7 +25,7 @@ const Products = () => {
                 </div>
             </div>
             <Link to='allitem' className='mb-16'>
-                <span className="p-3 font-bold text-gray-500 hover:text-white border-2 border-gray-200 rounded-md text-base hover:bg-orange-500 hover:border-orange-400 cursor-pointer">
+                <span className="p-3 font-bold text-gray-500 hover:text-white border-2 border-orange-500 rounded-md text-base hover:bg-orange-500 hover:border-orange-400 cursor-pointer">
                     SEE MORE
                 </span>
             </Link>

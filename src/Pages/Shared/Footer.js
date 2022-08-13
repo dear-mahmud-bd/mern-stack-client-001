@@ -5,7 +5,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <footer className="text-center lg:text-left bg-gray-100 text-gray-600">
-            <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+            <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300 bg-gray-200">
                 <div className="mr-12 hidden lg:block">
                     <span>Get connected with us on social networks:</span>
                 </div>
@@ -78,16 +78,16 @@ const Footer = () => {
                             Food Corner
                         </h6>
                         <p>
-                            You will get best quality food in this place.We always sell superior food keeping in mind the good health of the customer.
+                            You will get best quality food in this place. We always sell superior food keeping in mind the good health of the customer.
                         </p>
                     </div>
                     <div className="">
                         <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
                             Products
                         </h6>
+                        <p className="mb-4 text-gray-600">Fried Rice</p>
                         <p className="mb-4 text-gray-600">Icecream</p>
                         <p className="mb-4 text-gray-600">Kebab</p>
-                        <p className="mb-4 text-gray-600">Fried Rice</p>
                         <p className="mb-4 text-gray-600">Fruits</p>
                     </div>
                     <div className="">
