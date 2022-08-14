@@ -11,6 +11,7 @@ import AddItem from './Pages/Protect/AddItem';
 import AllProduct from './Pages/Shared/AllProduct';
 import Footer from './Pages/Shared/Footer';
 import { ToastContainer } from 'react-toastify';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path='/additem' element={<AddItem />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
         <Footer/>

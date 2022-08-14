@@ -5,7 +5,7 @@ import { MdDeliveryDining, MdDescription, MdFastfood, MdOutlineAddPhotoAlternate
 
 const AddItem = () => {
     return (
-        <div className="w-full  flex items-center justify-center">
+        <div className="w-full  flex items-center justify-center h-[75vh]">
             <div className="w-[90%] md:w-[50%] border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
                 
                 <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">

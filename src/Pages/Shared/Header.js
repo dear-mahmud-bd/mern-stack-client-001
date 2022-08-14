@@ -101,7 +101,7 @@ const Header = () => {
                                         user ?
                                             <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={handleSignOut}><MdLogout /> LogOut</p>
                                             :
-                                            <Link to='/login'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base'><MdLogin /> LogIn</p></Link>
+                                            <Link to='/login'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdLogin /> LogIn</p></Link>
                                     }
                                 </motion.div>
                             )

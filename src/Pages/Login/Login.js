@@ -13,7 +13,6 @@ const Login = () => {
     const navigate = useNavigate();
 
     const location = useLocation();
-    ;
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 
@@ -50,18 +49,9 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
-
-
-
-
-
-
-
-
     // Reset Password Part ...
     const resetPassword = async (event) => {
         const email = emailRef.current.value;
-        console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
             toast('Send you a Mail');
