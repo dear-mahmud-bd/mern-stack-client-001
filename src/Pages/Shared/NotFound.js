@@ -1,10 +1,13 @@
 import React from 'react';
+import NoFound from '../../image/NotFound.svg';
 
 const NotFound = () => {
     return (
-        <div className='container h-[100vh]'>
-            <h1 className='text-center' style={{ fontSize: "250px" }}>404</h1>
-            <p className='text-3xl text-center'>this site cannot be reached ...</p>
+        <div className="w-full flex flex-col items-center justify-center">
+            <img src={NoFound} className="h-340" alt='Not Found' />
+            <p className="text-xl text-headingColor font-semibold my-2">
+                Link is Not Available
+            </p>
         </div>
     );
 };
