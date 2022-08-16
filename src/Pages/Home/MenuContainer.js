@@ -20,12 +20,8 @@ const MenuContainer = () => {
             return product.category === item;
         });
         setProducts(updateContainer);
-        console.log(updateContainer);
     }
-
-    console.log(filter);
-
-
+    
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         fetch('categories.json')
@@ -81,10 +77,7 @@ const MenuContainer = () => {
                 <div className="w-full mb-6 flex justify-center">
                     <div className="w-full flex items-center gap-3  my-6 scroll-smooth overflow-x-hidden flex-wrap justify-center">
                         {
-                            // products.filter(product=> product.category === filter) ?
-
                             products.length > 0 ?
-
                                 products.slice(0, 6).map((item) => (
                                     <div
                                         key={item?.id}
@@ -102,7 +95,6 @@ const MenuContainer = () => {
                                                 />
                                             </motion.div>
                                         </div>
-
                                         <div className="w-full flex flex-col items-end justify-end -mt-8">
                                             <div className="flex items-center gap-8">
                                                 <p className="text-lg text-headingColor font-semibold">
@@ -128,7 +120,6 @@ const MenuContainer = () => {
                         }
                     </div>
                 </div>
-
             </div>
         </section>
     );

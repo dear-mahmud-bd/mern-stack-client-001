@@ -20,7 +20,7 @@ function App() {
     <AnimatePresence exitBeforeEnter>
       <div className='w-screen h-screen flex flex-col bg-primary'>
         <Header />
-        <main className='mt-0 md:mt-1 px-4 md:px-16 py-4 w-full bg-primary'>
+        <main className='mt-0 md:mt-20 px-4 md:px-16 py-4 w-full bg-primary'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
