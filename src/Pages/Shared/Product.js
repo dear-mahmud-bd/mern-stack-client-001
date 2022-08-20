@@ -8,7 +8,7 @@ const Product = ({ product }) => {
 
     const navigate = useNavigate();
     const navigateToStock = () => {
-        navigate(`/stock-update/${product.id}`);
+        navigate(`/stock-update/${product._id}`);
     };
     return (
         <div className="w-300 md:w-[298px] xl:w-375 cursor-pointer h-auto bg-gray-100 rounded-lg py-2 my-4 md:my-9 backdrop-blur-lg shadow-lg hover:drop-shadow-2xl hover:-translate-y-1 duration-500 mx-2">

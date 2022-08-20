@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import NotFound from './Pages/Shared/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import StockUpdate from './Pages/StockUpdate/StockUpdate';
+import DeleteItem from './Pages/DeleteItem/DeleteItem';
 
 function App() {
   return (
@@ -29,9 +30,10 @@ function App() {
                 <Service />
               </RequireAuth>
             } />
-            <Route path='/stock-update/:name' element={<StockUpdate />} />
+            <Route path='/stock-update/:id' element={<StockUpdate />} />
             <Route path='/allitem' element={<AllProduct />} />
             <Route path='/additem' element={<AddItem />} />
+            <Route path='/deleteitem' element={<DeleteItem />} />
             <Route path='/register' element={<Register />} />
             <Route path='/blogs' element={<Blogs />} />
             <Route path='/login' element={<Login />} />
