@@ -2,14 +2,10 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { MdDeliveryDining } from 'react-icons/md';
 import { GrUpdate } from 'react-icons/gr';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
 
-    const navigate = useNavigate();
-    const navigateToStock = () => {
-        navigate(`/stock-update/${product._id}`);
-    };
     return (
         <div className="w-300 md:w-[298px] xl:w-375 cursor-pointer h-auto bg-gray-100 rounded-lg py-2 my-4 md:my-9 backdrop-blur-lg shadow-lg hover:drop-shadow-2xl hover:-translate-y-1 duration-500 mx-2">
             <div className='w-full flex items-center justify-between'>
@@ -18,9 +14,9 @@ const Product = ({ product }) => {
                     src={product.img} alt=""
                     className='w-40 -mt-8'
                 />
-                <motion.button whileTap={{ scale: 0.75 }} className='w-24 h-12 rounded-full bg-orange-400 flex items-center justify-center cursor-pointer hover:shadow-md mr-3' onClick={() => navigateToStock(product.id)}>
+                <Link to={`/stock-update/${product._id}`}><motion.button whileTap={{ scale: 0.75 }} className='w-24 h-12 rounded-full bg-orange-400 flex items-center justify-center cursor-pointer hover:shadow-md mr-3'>
                     <p className='font-bold flex items-center gap-1 select-none'>Update <GrUpdate className='text-white font-bold text-lg' /></p>
-                </motion.button>
+                </motion.button></Link>
             </div>
             <div className='w-full flex flex-col items-end justify-end px-2'>
                 <p className="text-textColor font-semibold text-lg md:text-xl">{product.name}</p>

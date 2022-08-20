@@ -28,7 +28,7 @@ const Header = () => {
         setIsMenu(false);
     }
     return (
-        <header className='fixed z-50 w-screen p-4 px-7 md:p-4 md:px-16 bg-primary hover:drop-shadow-lg'>
+        <header className='fixed z-50 w-screen p-4 px-7 md:p-4 md:px-16 bg-primary drop-shadow-sm hover:drop-shadow-lg'>
             {/* fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary */}
 
             {/* Desktop & Tablet View */}
