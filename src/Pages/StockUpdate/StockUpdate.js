@@ -13,7 +13,7 @@ const StockUpdate = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setFood(data))
-    }, [])
+    }, [foodId])
 
     const handleDelivery = () => {
         const currentQuantity = parseInt(food.quantity);
@@ -52,10 +52,10 @@ const StockUpdate = () => {
         e.preventDefault();
         const getNum = e.target.quantity.value;
         const getQuantity = parseInt(getNum);
-        const proceed = window.confirm('Are you sure, you want to add quantity');
+        const proceed = window.confirm('Are you sure, you want to add quantity ...');
         if (proceed) {
             if (getQuantity <= 0) {
-                toast('Add numbers greater than zero');
+                toast('Add number must be greater than zero');
             } else {
                 const previousQuantity = food.quantity;
                 const totalQuantity = getQuantity + parseInt(previousQuantity);
@@ -87,7 +87,7 @@ const StockUpdate = () => {
     };
 
     return (
-        <div className="w-300 xsm:w-[480px] lg:w-[600px] cursor-pointer h-auto bg-gray-100 rounded-lg py-2 my-4 md:mt-20 backdrop-blur-lg shadow-lg hover:drop-shadow-2xl hover:-translate-y-1 duration-500 mt-20 mx-auto">
+        <div className="w-300 xsm:w-[480px] lg:w-[600px] cursor-pointer h-auto bg-gray-100 rounded-lg py-2 my-4 md:mt-20 backdrop-blur-lg shadow-lg hover:drop-shadow-2xl hover:-translate-y-1 duration-500 mt-[120px] xsm:mt-[150px] mx-auto">
             <div className='w-full flex items-center justify-between'>
                 <motion.img
                     whileHover={{ scale: 1.2 }}
@@ -99,7 +99,8 @@ const StockUpdate = () => {
                 </motion.button>
             </div>
             <div className='w-full flex flex-col items-center justify-end px-2'>
-                <p className="text-textColor font-semibold text-xl xsm:text-3xl md:text-xl">{food.name}</p>
+                <p className="text-textColor font-semibold text-xl xsm:text-3xl">{food.name}</p>
+                <p className="text-gray-400 text-lg xsm:text-xl ">{food.description}</p>
                 <p className="mt-1 text-gray-500 text-lg">Available: {food.quantity} pitches</p>
                 <form onSubmit={handleAddQuantity} className='w-full mt-3'>
                     <div className="w-[50%] py-2 border-b border-gray-300 flex items-center gap-2 m-1 mb-3 mx-auto">

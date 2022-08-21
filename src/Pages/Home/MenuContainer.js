@@ -2,13 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { IoFastFood } from "react-icons/io5";
 import NotFound from "../../image/NotFound.svg";
-import Items from '../../products.json';
 
 const MenuContainer = () => {
-
-    const [products, setProducts] = useState(Items);
+    // used to set all product to compare category ...
+    const [allProduct, setAllProduct] = useState({});
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/food')
+            .then(res => res.json())
+            .then(data => setAllProduct(data))
+    }, []);
+
+    // used to click and showing its category product ...
+    const [products, setProducts] = useState({});
+    useEffect(() => {
+        fetch('http://localhost:5000/food')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -16,18 +23,19 @@ const MenuContainer = () => {
     const [filter, setFilter] = useState("chicken");
 
     const updateItem = item => {
-        const updateContainer = Items.filter(product => {
+        const updateContainer = allProduct.filter(product => {
             return product.category === item;
         });
         setProducts(updateContainer);
     }
-    
+
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         fetch('categories.json')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
+
     return (
         <section className="w-full my-6" id="menu">
             <div className="w-full flex flex-col items-center justify-center">
@@ -80,7 +88,7 @@ const MenuContainer = () => {
                             products.length > 0 ?
                                 products.slice(0, 6).map((item) => (
                                     <div
-                                        key={item?.id}
+                                        key={item?._id}
                                         className="w-275 h-[175px] min-w-[275px] md:w-300 md:min-w-[300px]  bg-white rounded-lg py-2 px-4 my-12 backdrop-blur-lg hover:drop-shadow-lg flex flex-col items-center justify-evenly relative"
                                     >
                                         <div className="w-full flex items-center justify-between">
