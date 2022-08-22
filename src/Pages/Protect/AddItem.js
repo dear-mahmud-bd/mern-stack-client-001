@@ -1,13 +1,13 @@
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { motion } from "framer-motion";
 import { toast } from 'react-toastify';
 import { FaSortAmountUpAlt } from 'react-icons/fa';
 import { IoIosPricetags } from 'react-icons/io';
 import { MdCategory, MdDeliveryDining, MdDescription, MdFastfood, MdOutlineAddPhotoAlternate } from 'react-icons/md';
+import auth from '../../firebase.init';
 
 const AddItem = () => {
-
-
-
+    const [user] = useAuthState(auth);
 
     const handleAddItem = e => {
         e.preventDefault();
@@ -24,7 +24,7 @@ const AddItem = () => {
         if (parseInt(addQuantity) <= 0 || parseInt(addPrice) <= 0) {
             toast("Price and Quantity must be greater than zero");
         } else {
-            const item = { name, category, img, description, quantity, price, supplier };
+            const item = { email: user.email, name, category, img, description, quantity, price, supplier };
 
             // POST data from client ...
             fetch('http://localhost:5000/food', {
@@ -39,6 +39,7 @@ const AddItem = () => {
                     toast('Item added Successfully :)');
                     e.target.reset();
                 })
+            e.target.reset();
         }
     }
 

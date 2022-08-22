@@ -17,7 +17,7 @@ const StockUpdate = () => {
     }, [foodId])
 
     const handleDelivery = () => {
-        const currentQuantity = parseInt(food.quantity);
+        const currentQuantity = parseInt(food?.quantity);
         const afterDeleveryQuantity = currentQuantity - 1;
         if (afterDeleveryQuantity < 0) {
             toast('Item not available')
@@ -58,7 +58,7 @@ const StockUpdate = () => {
             if (getQuantity <= 0) {
                 toast('Add number must be greater than zero');
             } else {
-                const previousQuantity = food.quantity;
+                const previousQuantity = food?.quantity;
                 const totalQuantity = getQuantity + parseInt(previousQuantity);
                 const quantity = totalQuantity.toString();
                 const setQuantity = { quantity };
@@ -93,7 +93,7 @@ const StockUpdate = () => {
                 <div className='w-full flex items-center justify-between'>
                     <motion.img
                         whileHover={{ scale: 1.2 }}
-                        src={food.img} alt=""
+                        src={food?.img} alt=""
                         className='w-40 -mt-8 xsm:w-60 xsm:-mt-12 '
                     />
                     <motion.button onClick={handleDelivery} whileTap={{ scale: 0.75 }} className='w-32 h-12 rounded-full bg-green-400 flex items-center justify-center cursor-pointer hover:shadow-md mr-3 xsm:mr-10'>
@@ -101,9 +101,9 @@ const StockUpdate = () => {
                     </motion.button>
                 </div>
                 <div className='w-full flex flex-col items-center justify-end px-2'>
-                    <p className="text-textColor font-semibold text-xl xsm:text-3xl">{food.name}</p>
-                    <p className="text-gray-400 text-lg xsm:text-xl ">{food.description}</p>
-                    <p className="mt-1 text-gray-500 text-lg">Available: {food.quantity} pitches</p>
+                    <p className="text-textColor font-semibold text-xl xsm:text-3xl">{food?.name}</p>
+                    <p className="text-gray-400 text-lg xsm:text-xl ">{food?.description}</p>
+                    <p className="mt-1 text-gray-500 text-lg">Available: {food?.quantity} pitches</p>
                     <form onSubmit={handleAddQuantity} className='w-full mt-3'>
                         <div className="w-[50%] py-2 border-b border-gray-300 flex items-center gap-2 m-1 mb-3 mx-auto">
                             <MdAdd className="text-xl text-gray-700" />

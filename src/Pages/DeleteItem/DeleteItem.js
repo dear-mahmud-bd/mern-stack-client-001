@@ -43,7 +43,7 @@ const DeleteItem = () => {
         <div className="w-full mb-6 flex justify-center">
             <div className="w-full flex items-center gap-3  my-6 scroll-smooth overflow-x-hidden flex-wrap justify-center">
                 {
-                    products.length > 0 ?
+                    products?.length > 0 ?
                         products.map((item) => (
                             <div
                                 key={item?._id}

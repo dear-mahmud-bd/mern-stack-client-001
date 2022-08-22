@@ -60,7 +60,7 @@ const Header = () => {
                                         {
                                             user ?
                                                 <>
-                                                    <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p>
+                                                    <Link to='/myitem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p></Link>
                                                     <Link to='/additem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdAdd /> Add Item</p></Link>
                                                     <Link to='/deleteitem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdDeleteForever /> Delete Item</p></Link>
                                                     <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={handleSignOut}><MdLogout /> LogOut</p>
@@ -99,7 +99,7 @@ const Header = () => {
                                     {
                                         user ?
                                             <>
-                                                <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p>
+                                                <Link to='/myitem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><CgUserList /> My Item</p></Link>
                                                 <Link to='/additem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdAdd /> Add Item</p></Link>
                                                 <Link to='/deleteitem'><p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}><MdDeleteForever /> Delete Item</p></Link>
                                                 <p className='px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-200 transition-all duration-200 ease-in-out text-textColor text-base' onClick={handleSignOut}><MdLogout /> LogOut</p>

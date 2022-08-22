@@ -15,6 +15,7 @@ import NotFound from './Pages/Shared/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import StockUpdate from './Pages/StockUpdate/StockUpdate';
 import DeleteItem from './Pages/DeleteItem/DeleteItem';
+import MyItem from './Pages/Protect/MyItem';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             } />
             <Route path='/stock-update/:id' element={<StockUpdate />} />
             <Route path='/allitem' element={<AllProduct />} />
+            <Route path='/myitem' element={<MyItem />} />
             <Route path='/additem' element={<AddItem />} />
             <Route path='/deleteitem' element={<DeleteItem />} />
             <Route path='/register' element={<Register />} />
