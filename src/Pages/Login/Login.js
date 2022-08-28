@@ -6,6 +6,7 @@ import GoogleLogin from './GoogleLogin';
 import Loading from '../Shared/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -28,8 +29,10 @@ const Login = () => {
         error1
     ] = useSendPasswordResetEmail(auth);
 
-    if (user) {
-        // navigate(from, { replace: true });
+    const [token] = useToken(user);
+
+    if (token) {
+        navigate(from, { replace: true });
     }
     if (loading || sending) {
         return <Loading />
@@ -47,20 +50,6 @@ const Login = () => {
         const password = event.target.password.value;
 
         await signInWithEmailAndPassword(email, password);
-
-        // POST data from client ...
-        await fetch('https://limitless-shore-74673.herokuapp.com/login', {
-            method: 'POST', // or 'PUT'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email }),
-        })
-            .then(res => res.json())
-            .then(data => {
-                localStorage.setItem('accessToken', data.accessToken);
-                navigate(from, { replace: true });
-            })
     };
 
     // Reset Password Part ...
@@ -105,7 +94,7 @@ const Login = () => {
                     {/* Account Log in */}
                     <div className=" text-center">
                         <div>
-                            <p>Don't have a account? <Link to='/register' className=' underline cursor-pointer text-yellow-700'>Register now</Link></p>
+                            <p>Don't have an account? <Link to='/register' className=' underline cursor-pointer text-yellow-700'>Register now</Link></p>
                         </div>
                     </div>
                     <GoogleLogin></GoogleLogin>

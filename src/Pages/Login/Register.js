@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import GoogleLogin from './GoogleLogin';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     // useRef('') is not used is this page... 
@@ -26,7 +27,9 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [updateProfile, updating, error1] = useUpdateProfile(auth);
 
-    if (user) {
+    const [token] = useToken(user);
+
+    if (token) {
         navigate(from, { replace: true });
     }
     if (loading || updating) {
@@ -76,7 +79,7 @@ const Register = () => {
                             <input className="border rounded-md bg-white px-3 py-2" type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter your Password" ref={confirmPassRef} required />
                         </div>
                         <div className="flex items-center space-x-2">
-                            <input classNmae="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" type="checkbox" onClick={() => setAgree(!agree)} name="terms" id="terms" />
+                            <input className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" type="checkbox" onClick={() => setAgree(!agree)} name="terms" id="terms" />
                             <label for="remember">Accept Terms and Conditions</label>
                         </div>
                         {errorElement}
