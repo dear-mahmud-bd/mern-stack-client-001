@@ -21,7 +21,9 @@ const useToken = user => {
             }
         }
         getToken();
+    
     }, [user]);
+
     return [token];
 }
 

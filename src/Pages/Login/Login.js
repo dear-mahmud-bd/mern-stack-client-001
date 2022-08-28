@@ -44,6 +44,8 @@ const Login = () => {
             errorElement = <p className='font-bold text-center text-red-600 py-1 bg-red-300 rounded-lg drop-shadow-lg'>{error1.message}</p>
         }
     }
+
+    // LogIn ...
     const handleLogin = async event => {
         event.preventDefault();
         const email = event.target.email.value;

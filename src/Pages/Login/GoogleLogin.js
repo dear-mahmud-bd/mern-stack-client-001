@@ -1,7 +1,7 @@
-import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { FaGoogle } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
+import React from 'react';
 import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';

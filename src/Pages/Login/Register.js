@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth'
-import auth from '../../firebase.init';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import GoogleLogin from './GoogleLogin';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
