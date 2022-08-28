@@ -10,7 +10,7 @@ const StockUpdate = () => {
     const foodId = useParams();
     const [food, setFood] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/food/${foodId.id}`;
+        const url = `https://limitless-shore-74673.herokuapp.com/food/${foodId.id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setFood(data))
@@ -27,7 +27,7 @@ const StockUpdate = () => {
             const proceed = window.confirm('Are you sure you want to DELIVERD ?');
             if (proceed) {
                 // Update data from client ...
-                const url = `http://localhost:5000/food/${foodId.id}`
+                const url = `https://limitless-shore-74673.herokuapp.com/food/${foodId.id}`
                 fetch(url, {
                     method: 'PUT', // or 'POST'
                     headers: {
@@ -37,7 +37,7 @@ const StockUpdate = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        const url = `http://localhost:5000/food/${foodId.id}`;
+                        const url = `https://limitless-shore-74673.herokuapp.com/food/${foodId.id}`;
                         fetch(url)
                             .then(res => res.json())
                             .then(updated => setFood(updated))
@@ -64,7 +64,7 @@ const StockUpdate = () => {
                 const setQuantity = { quantity };
 
                 // Update data from client ...
-                const url = `http://localhost:5000/food/${foodId.id}`
+                const url = `https://limitless-shore-74673.herokuapp.com/food/${foodId.id}`
                 fetch(url, {
                     method: 'PUT', // or 'POST'
                     headers: {
@@ -74,7 +74,7 @@ const StockUpdate = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        const url = `http://localhost:5000/food/${foodId.id}`;
+                        const url = `https://limitless-shore-74673.herokuapp.com/food/${foodId.id}`;
                         fetch(url)
                             .then(res => res.json())
                             .then(updated => setFood(updated))

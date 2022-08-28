@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const DeleteItem = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://limitless-shore-74673.herokuapp.com/food')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -19,7 +19,7 @@ const DeleteItem = () => {
         } else if (typing === "CONFIRM") {
             const proceed = window.confirm('Click OK to Proceed');
             if (proceed) {
-                const url = `http://localhost:5000/food/${id}`;
+                const url = `https://limitless-shore-74673.herokuapp.com/food/${id}`;
                 fetch(url, {
                     method: 'DELETE'
                 })

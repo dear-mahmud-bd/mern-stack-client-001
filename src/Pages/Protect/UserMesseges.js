@@ -21,7 +21,7 @@ const UserMesseges = () => {
 
     const [feedbacks, setFeedbacks] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/feedback-message?email=${email}`;
+        const url = `https://limitless-shore-74673.herokuapp.com/feedback-message?email=${email}`;
         try {
             fetch(url, {
                 method: 'GET',
@@ -76,7 +76,7 @@ const UserMesseges = () => {
         const details = { name: name, email: email, message, year, month, date };
 
         // POST data from client ...
-        fetch('http://localhost:5000/feedback-message', {
+        fetch('https://limitless-shore-74673.herokuapp.com/feedback-message', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

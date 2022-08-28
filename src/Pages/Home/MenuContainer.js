@@ -7,7 +7,7 @@ const MenuContainer = () => {
     // used to set all product to compare category ...
     const [allProduct, setAllProduct] = useState({});
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://limitless-shore-74673.herokuapp.com/food')
             .then(res => res.json())
             .then(data => setAllProduct(data))
     }, []);
@@ -15,7 +15,7 @@ const MenuContainer = () => {
     // used to click and showing its category product ...
     const [products, setProducts] = useState({});
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://limitless-shore-74673.herokuapp.com/food')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

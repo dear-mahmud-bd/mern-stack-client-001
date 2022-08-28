@@ -8,7 +8,7 @@ const AllProduct = () => {
 
     const [pageCount, setPageCount] = useState(0);
     useEffect(() => {
-        fetch('http://localhost:5000/foodCount')
+        fetch('https://limitless-shore-74673.herokuapp.com/foodCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
@@ -19,10 +19,10 @@ const AllProduct = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/food?page=${page}&size=${size}`)
+        fetch(`https://limitless-shore-74673.herokuapp.com/food?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [page, size]); // here, Dependency means that any one of the two changes {[page, size]} will hit the API ( http://localhost:5000/food?page=${page}&size=${size} )...
+    }, [page, size]); // here, Dependency means that any one of the two changes {[page, size]} will hit the API ( https://limitless-shore-74673.herokuapp.com/food?page=${page}&size=${size} )...
 
     return (
         <>

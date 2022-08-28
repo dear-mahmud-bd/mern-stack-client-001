@@ -27,7 +27,7 @@ const AddItem = () => {
             const item = { email: user.email, name, category, img, description, quantity, price, supplier };
 
             // POST data from client ...
-            fetch('http://localhost:5000/food', {
+            fetch('https://limitless-shore-74673.herokuapp.com/food', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',

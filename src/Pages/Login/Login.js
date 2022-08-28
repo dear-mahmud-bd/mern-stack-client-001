@@ -49,7 +49,7 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password);
 
         // POST data from client ...
-        await fetch('http://localhost:5000/login', {
+        await fetch('https://limitless-shore-74673.herokuapp.com/login', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
