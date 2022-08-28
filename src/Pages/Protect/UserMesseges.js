@@ -15,11 +15,11 @@ const UserMesseges = () => {
     if (loading) {
         <Loading />
     }
-
-    const email = user?.email;
-    const name = user?.displayName;
-
     const [feedbacks, setFeedbacks] = useState([]);
+
+    const name = user?.displayName;
+    const email = user?.email;
+
     useEffect(() => {
         const url = `https://limitless-shore-74673.herokuapp.com/feedback-message?email=${email}`;
         try {
@@ -71,7 +71,7 @@ const UserMesseges = () => {
     const date = new Date().getDate();
 
     const handleUserFeedback = e => {
-        // e.preventDefault();
+        e.preventDefault();
         const message = e.target.message.value;
         const details = { name: name, email: email, message, year, month, date };
 
@@ -85,6 +85,20 @@ const UserMesseges = () => {
         })
             .then(res => res.json())
             .then(data => {
+                // set data in page
+                const url = `https://limitless-shore-74673.herokuapp.com/feedback-message?email=${email}`;
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        setFeedbacks(data)
+                    })
+
+
                 toast('Send Feedback Successfully :)');
                 e.target.reset();
             })
@@ -130,7 +144,7 @@ const UserMesseges = () => {
                                 <div className="w-full flex flex-col items-center justify-center">
                                     <img src={NotFound} className="h-340" alt='Not Found' />
                                     <p className="text-xl text-headingColor font-semibold my-2">
-                                        You have not given any feedback yet.
+                                        You haven't given any feedback yet OR you have no access
                                     </p>
                                 </div>
                             )
