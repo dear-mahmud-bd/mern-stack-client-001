@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserFeedback = () => {
     return (
@@ -11,19 +12,21 @@ const UserFeedback = () => {
                         <form>
                             <div className="relative w-full mb-2">
                                 <span className="p-2 text-orange-600">- Put Your Name</span>
-                                <input type="text" name="name" className="border-0 p-4 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Your Name" style={{ transition: "all 0.15s ease 0s" }} required disabled/>
+                                <input type="text" name="name" className="border-0 p-4 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="FirstName LastName" style={{ transition: "all 0.15s ease 0s" }} required disabled />
                             </div>
                             <div className="relative w-full mb-2">
-                            <span className="p-2 text-orange-600">- Put Your Email</span>
-                                <input type="email" name="email" className="border-0 p-4 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Your Email Address" style={{ transition: "all 0.15s ease 0s" }} required disabled/>
+                                <span className="p-2 text-orange-600">- Put Your Email</span>
+                                <input type="email" name="email" className="border-0 p-4 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="some@example.com" style={{ transition: "all 0.15s ease 0s" }} required disabled />
                             </div>
                             <div className="relative w-full mb-2">
-                            <span className="p-2 text-orange-600">- Put Your Message</span>
-                                <textarea type="text" name="message" className="border-0 p-4 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Your Feedback" style={{ transition: "all 0.15s ease 0s" }} required disabled/>
+                                <span className="p-2 text-orange-600">- Put Your Message</span>
+                                <textarea type="text" name="message" className="border-0 p-4 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Try to maintain the highest quality of this food ..." style={{ transition: "all 0.15s ease 0s" }} required disabled />
                             </div>
-                            <div className="text-center mt-6">
-                                <input type="submit" name="submit" value="Send Message" className="p-3 rounded-lg bg-orange-600 outline-none text-white shadow w-32 justify-center focus:bg-orange-700 hover:bg-orange-500 cursor-pointer" disabled/>
-                            </div>
+                            <Link to='/feedback-message'>
+                                <div className="text-center mt-6">
+                                    <input type="submit" name="submit" value="Send Feedback" className="p-3 rounded-lg bg-orange-600 outline-none text-white shadow w-32 justify-center focus:bg-orange-700 hover:bg-orange-500 cursor-pointer" />
+                                </div>
+                            </Link>
                         </form>
                     </div>
                 </div>

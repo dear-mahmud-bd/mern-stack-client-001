@@ -5,7 +5,6 @@ import Home from './Pages/Home/Home';
 import { AnimatePresence } from 'framer-motion';
 import Register from './Pages/Login/Register';
 import Login from './Pages/Login/Login';
-import Service from './Pages/Service/Service';
 import RequireAuth from './Pages/Login/RequireAuth';
 import AddItem from './Pages/Protect/AddItem';
 import AllProduct from './Pages/Shared/AllProduct';
@@ -16,6 +15,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import StockUpdate from './Pages/StockUpdate/StockUpdate';
 import DeleteItem from './Pages/DeleteItem/DeleteItem';
 import MyItem from './Pages/Protect/MyItem';
+import UserMesseges from './Pages/Protect/UserMesseges';
 
 function App() {
   return (
@@ -26,16 +26,15 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/service' element={
-              <RequireAuth>
-                <Service />
-              </RequireAuth>
-            } />
-            <Route path='/stock-update/:id' element={<StockUpdate />} />
+
+            {/* ----------------------------- Protected Pages ----------------------------- */}
+            <Route path='/stock-update/:id' element={<RequireAuth><StockUpdate /></RequireAuth>} />
+            <Route path='/additem' element={<RequireAuth><AddItem /></RequireAuth>} />
+            <Route path='/myitem' element={<RequireAuth><MyItem /></RequireAuth>} />
+            <Route path='/deleteitem' element={<RequireAuth><DeleteItem /></RequireAuth>} />
+            <Route path='/feedback-message' element={<RequireAuth><UserMesseges /></RequireAuth>} />
+
             <Route path='/allitem' element={<AllProduct />} />
-            <Route path='/myitem' element={<MyItem />} />
-            <Route path='/additem' element={<AddItem />} />
-            <Route path='/deleteitem' element={<DeleteItem />} />
             <Route path='/register' element={<Register />} />
             <Route path='/blogs' element={<Blogs />} />
             <Route path='/login' element={<Login />} />

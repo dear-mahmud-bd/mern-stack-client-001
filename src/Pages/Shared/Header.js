@@ -4,7 +4,7 @@ import Logo from '../../image/logo.png';
 import UserPic from '../../image/avatar.png';
 import { MdShoppingCart, MdAdd, MdLogout, MdLogin, MdHome, MdList, MdDeleteForever } from 'react-icons/md';
 import { CgUserList } from 'react-icons/cg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
@@ -12,10 +12,6 @@ import { signOut } from 'firebase/auth';
 const Header = () => {
 
     const [user] = useAuthState(auth);
-    const navigate = useNavigate();
-    const navigateService = () => {
-        navigate('/service');
-    }
 
     // Dropdown Menu Item ...
     const [isMenu, setIsMenu] = useState(false);
@@ -42,7 +38,6 @@ const Header = () => {
                         <Link to='/'><li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>Home</li></Link>
                         <Link to='blogs'><li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>Blogs</li></Link>
                         <Link to='allitem'><li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'>All Item</li></Link>
-                        <li className=' text-base text-textColor hover:text-heaingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/service" onClick={navigateService}>Service</Link></li>
                     </motion.ul>
                     <div className='relative flex items-center justify-center'>
                         <MdShoppingCart className='text-textColor hover:text-heaingColor cursor-pointer text-2xl' />

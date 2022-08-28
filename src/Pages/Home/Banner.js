@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Delivery from '../../image/delivery.png';
 import HeroBg from '../../image/heroBg.png';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -21,10 +22,10 @@ const Banner = () => {
                     </div>
                 </div>
                 <p className="text-[2.5rem] lg:text-[4.25rem] font-bold tracking-wide text-heaingColor"><span className='text-orange-500 text-[3rem] lg:text-[5rem]'>Food Corner</span> is the best site for food...</p>
-                <p className='text-base text-textColor text-center md:text-left md:w-[80%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, repudiandae sapiente aperiam at temporibus soluta animi iste, perferendis nulla optio quod possimus neque suscipit a. Enim officia illo sapiente placeat?</p>
-                <button type='button'
+                <p className='text-base text-textColor text-center md:text-left md:w-[80%]'>Food corner website is most popular in terms of stock. You will find almost all types of food on our website. We try to maintain the highest quality of this food. We have all kinds of local and foreign foods in stock here. Click now to view all products in our stock ...</p>
+                <Link to='allitem'><button type='button'
                     className=' bg-gradient-to-br from-orange-400 to-orange-500 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100 '
-                >Order Now</button>
+                >Click Now</button></Link>
             </div>
 
             <div className='py-2 flex-1 flex items-center relative'>

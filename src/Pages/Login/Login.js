@@ -29,7 +29,7 @@ const Login = () => {
     ] = useSendPasswordResetEmail(auth);
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
     if (loading || sending) {
         return <Loading />
@@ -41,12 +41,26 @@ const Login = () => {
             errorElement = <p className='font-bold text-center text-red-600 py-1 bg-red-300 rounded-lg drop-shadow-lg'>{error1.message}</p>
         }
     }
-    const handleLogin = event => {
+    const handleLogin = async event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+
+        // POST data from client ...
+        await fetch('http://localhost:5000/login', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem('accessToken', data.accessToken);
+                navigate(from, { replace: true });
+            })
     };
 
     // Reset Password Part ...
