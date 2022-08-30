@@ -22,23 +22,23 @@ const UserMesseges = () => {
 
     useEffect(() => {
         const url = `https://limitless-shore-74673.herokuapp.com/feedback-message?email=${email}`;
-        try {
-            fetch(url, {
-                method: 'GET',
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    setFeedbacks(data)
-                })
-        } catch (error) {
-            if (error.response.status === 401 || error.response.status === 401) {
-                signOut(auth);
-                navigate('/login');
+
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
-        }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    navigate('/login');
+                }
+                res.json()
+            })
+            .then(data => {
+                setFeedbacks(data)
+            })
     }, [email])
 
     const year = new Date().getFullYear();
