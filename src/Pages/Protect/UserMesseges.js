@@ -39,7 +39,7 @@ const UserMesseges = () => {
             .then(data => {
                 setFeedbacks(data)
             })
-    }, [email])
+    }, [])
 
     const year = new Date().getFullYear();
     let month;
@@ -98,7 +98,7 @@ const UserMesseges = () => {
                         setFeedbacks(data)
                     })
 
-
+                // toast message ...
                 toast('Send Feedback Successfully :)');
                 e.target.reset();
             })
