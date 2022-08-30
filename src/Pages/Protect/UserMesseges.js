@@ -22,7 +22,6 @@ const UserMesseges = () => {
 
     useEffect(() => {
         const url = `https://limitless-shore-74673.herokuapp.com/feedback-message?email=${email}`;
-
         fetch(url, {
             method: 'GET',
             headers: {
@@ -34,12 +33,12 @@ const UserMesseges = () => {
                     signOut(auth);
                     navigate('/login');
                 }
-                res.json()
+                return res.json()
             })
             .then(data => {
                 setFeedbacks(data)
             })
-    }, [])
+    }, [email])
 
     const year = new Date().getFullYear();
     let month;
