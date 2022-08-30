@@ -144,7 +144,7 @@ const UserMesseges = () => {
                                 <div className="w-full flex flex-col items-center justify-center">
                                     <img src={NotFound} className="h-340" alt='Not Found' />
                                     <p className="text-xl text-headingColor font-semibold my-2">
-                                        You haven't given any feedback yet OR you have no access
+                                        You haven't given any feedback yet.
                                     </p>
                                 </div>
                             )
